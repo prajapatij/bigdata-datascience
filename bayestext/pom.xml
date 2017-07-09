@@ -29,6 +29,11 @@
    <artifactId>spark-hive_${scala.compat.version}</artifactId>
    <version>${spark.version}</version>
   </dependency>
+      <dependency>
+      <groupId>org.apache.spark</groupId>
+      <artifactId>spark-mllib_${scala.compat.version}</artifactId>
+      <version>${spark.version}</version>   
+   </dependency>
 <!-- Test -->
   <dependency>
    <groupId>junit</groupId>
