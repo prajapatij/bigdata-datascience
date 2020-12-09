@@ -1,0 +1,34 @@
+1) Setup pyenv
+	1a) Setup git
+	1b) Follow setup instructions at https://pypi.org/project/pyenv-win/
+	1c) Follow "Usage" section to install and set python versions
+
+2) Setup environment variables to launch at run time
+	SET GIT_HOME=%USERPROFILE%\AppData\Local\GitHubDesktop\app-2.6.0\resources\app\git
+	SET PYENV=%USERPROFILE%\.pyenv\pyenv-win
+	SET PYTHON_HOME=%USERPROFILE%\.pyenv\pyenv-win\versions\3.8.5
+	SET PATH=%PATH%;%GIT_HOME%\cmd;%PYENV%\bin;%PYTHON_HOME%\
+
+3) Build/Virtual Environment setup
+	For a python dev environment followings are the runnables,
+		python
+		python -m venv
+		python -m pip
+		python -m pip-tools
+	Project Structure,
+		workspace
+			|_ my_app
+				|_ .venv <- contains all dependencies
+				|_ setup
+					|_ requirements.all.in
+					|_ requirements.txt <- generated on the fly
+					|_ build_appenv.bat
+					|_ update_appenv.bat
+
+4) For simple setup, clone the repository,
+	edit workspace/my_app/setup/build_appenv.bat with your setup.env
+	run build_appenv.bat
+	workspace/my_app/.venv should be created with requirements.txt
+					
+
+	
